@@ -1,0 +1,151 @@
+body {
+  background: radial-gradient(farthest-corner at 40% 30%, #eb4747 30%, #f07575);
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+#root {
+  height: 95vh;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#container {
+  background-image: radial-gradient(farthest-corner at 40% 40%, black 20%, #323232);
+  max-width: 90%;
+  display: grid;
+  text-align: center;
+  grid-template-rows: 5.5rem repeat(5, 60px);
+  grid-template-columns: repeat(4, 70px);
+  padding: 1.5rem;
+  border-radius: 10px;
+  grid-template-areas: "display display display display" "clear clear divide multiply" "seven eight nine add" "four five six subtract" "one two three equals" "zero zero decimal equals";
+}
+
+.btn {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  background-color: #666666;
+  user-select: none;
+  margin: 0.3rem;
+  border-radius: 5px;
+}
+.btn:hover {
+  background-color: #b3b3b3;
+  color: black;
+}
+
+#display {
+  grid-area: display;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 0.3rem;
+  margin-bottom: 1rem;
+  background-color: #91b380;
+  font-size: 1.5rem;
+}
+
+#zero {
+  grid-area: zero;
+}
+
+#one {
+  grid-area: one;
+}
+
+#two {
+  grid-area: two;
+}
+
+#three {
+  grid-area: three;
+}
+
+#four {
+  grid-area: four;
+}
+
+#five {
+  grid-area: five;
+}
+
+#six {
+  grid-area: six;
+}
+
+#seven {
+  grid-area: seven;
+}
+
+#eight {
+  grid-area: eight;
+}
+
+#nine {
+  grid-area: nine;
+}
+
+#subtract {
+  grid-area: subtract;
+}
+
+#add {
+  grid-area: add;
+}
+
+#decimal {
+  grid-area: decimal;
+}
+
+#multiply {
+  grid-area: multiply;
+  background-color: #4d4d4d;
+}
+#multiply:hover {
+  background-color: gray;
+}
+
+#divide {
+  grid-area: divide;
+  background-color: #4d4d4d;
+}
+#divide:hover {
+  background-color: gray;
+}
+
+#clear {
+  grid-area: clear;
+  background-color: #e61a1a;
+}
+#clear:hover {
+  background-color: #f07575;
+}
+
+#equals {
+  grid-area: equals;
+  background-color: #e65e1a;
+}
+#equals:hover {
+  background-color: #f09e75;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+/*# sourceMappingURL=style.css.map */
