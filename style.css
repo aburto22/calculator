@@ -16,15 +16,15 @@ body {
   justify-content: center;
 }
 
-#container {
+main {
   background-image: radial-gradient(farthest-corner at 40% 40%, black 20%, #323232);
   max-width: 90%;
   display: grid;
   text-align: center;
-  grid-template-rows: 5.5rem repeat(5, 60px);
-  grid-template-columns: repeat(4, 70px);
+  grid-template-rows: 5.5rem repeat(5, 3.75rem);
+  grid-template-columns: repeat(4, min(20vw, 4.25rem));
   padding: 1.5rem;
-  border-radius: 10px;
+  border-radius: 0.75rem;
   grid-template-areas: "display display display display" "clear clear divide multiply" "seven eight nine add" "four five six subtract" "one two three equals" "zero zero decimal equals";
 }
 
@@ -37,8 +37,8 @@ body {
   color: white;
   background-color: #666666;
   user-select: none;
-  margin: 0.3rem;
-  border-radius: 5px;
+  margin: 0.25rem;
+  border-radius: 0.25rem;
 }
 .btn:hover {
   background-color: #b3b3b3;
@@ -51,7 +51,7 @@ body {
   align-items: center;
   text-align: right;
   padding: 1rem;
-  border-radius: 5px;
+  border-radius: 0.25rem;
   margin: 0.3rem;
   margin-bottom: 1rem;
   background-color: #91b380;
@@ -142,10 +142,25 @@ body {
   background-color: #f09e75;
 }
 
-#footer {
-  position: absolute;
+h1 {
+  text-align: center;
+  top: 0.5rem;
+}
+
+footer {
   bottom: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  text-align: center;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */

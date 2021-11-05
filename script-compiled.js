@@ -8,7 +8,7 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
@@ -78,14 +78,17 @@ function App() {
       case "-":
       case "*":
       case "/":
+        e.preventDefault();
         addDigit(e.key);
         break;
 
       case "Enter":
+        e.preventDefault();
         getResult();
         break;
 
       case "Backspace":
+        e.preventDefault();
         clearDisp();
         break;
     }
@@ -190,7 +193,7 @@ function App() {
           });
         }
       } else {
-        if (getCurrentNumber(disp) !== "0" & getCurrentNumber(disp).length < 9) {
+        if (getCurrentNumber(disp) !== "0" && getCurrentNumber(disp).length < 9) {
           setDisp(function (disp) {
             return disp + num;
           });
@@ -205,9 +208,9 @@ function App() {
     }
   }
 
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     id: "container"
-  }, /*#__PURE__*/React.createElement("input", {
+  }, /*#__PURE__*/React.createElement("h1", null, "Calculator"), /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement("input", {
     id: "display",
     value: disp,
     disabled: true
@@ -309,9 +312,7 @@ function App() {
     id: "clear",
     "class": "btn",
     onClick: clearDisp
-  }, "Clear")), /*#__PURE__*/React.createElement("p", {
-    id: "footer"
-  }, "Created by Alejandro Aburto for a freeCodeCamp challenge."));
+  }, "Clear")), /*#__PURE__*/React.createElement("footer", null, "Created by Alejandro Aburto for a freeCodeCamp challenge."));
 }
 
 ReactDOM.render( /*#__PURE__*/React.createElement(App, null), document.querySelector("#root"));

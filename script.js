@@ -56,12 +56,15 @@ function App() {
       case "-":
       case "*":
       case "/":
+        e.preventDefault();
         addDigit(e.key);
         break;
       case "Enter":
+        e.preventDefault();
         getResult();
         break;
       case "Backspace":
+        e.preventDefault();
         clearDisp();
         break;
     }
@@ -152,7 +155,7 @@ function App() {
         }
       } else {
         if (
-          (getCurrentNumber(disp) !== "0") &
+          (getCurrentNumber(disp) !== "0") &&
           (getCurrentNumber(disp).length < 9)
         ) {
           setDisp((disp) => disp + num);
@@ -166,8 +169,9 @@ function App() {
   }
 
   return (
-    <>
-      <div id="container">
+    <div id="container">
+      <h1>Calculator</h1>
+      <main>
         <input id="display" value={disp} disabled />
         <div id="equals" class="btn" onClick={getResult}>
           =
@@ -220,11 +224,11 @@ function App() {
         <div id="clear" class="btn" onClick={clearDisp}>
           Clear
         </div>
-      </div>
-      <p id="footer">
+      </main>
+      <footer>
         Created by Alejandro Aburto for a freeCodeCamp challenge.
-      </p>
-    </>
+      </footer>
+    </div>
   );
 }
 
